@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link href='./styles/index.css' rel='stylesheet' type='text/css'>
+    <title></title>
+  </head>
+  <body>
+    <section id="app">
+      <article v-for="joke in jokes" class="jokes">
+        <div class="setup">{{ joke.setup }}:</div>
+        <div class="punchline">{{ joke.punchline }}</div>
+      </article>
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,21 @@
+body {
+  background: #242424;
+  color: #f9ee98;
+  padding: 20px 10px;
+}
+
+.setup {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.punchline {
+  font-size: 1.1em;
+}
+
+.jokes {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+}
