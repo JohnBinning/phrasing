@@ -7,9 +7,14 @@
   </head>
   <body>
     <section id="app">
-      <article v-for="joke in jokes" class="jokes">
+      <!--<article v-for="joke in jokes" class="jokes">
         <div class="setup">{{ joke.setup }}:</div>
         <div class="punchline">{{ joke.punchline }}</div>
+      </article>-->
+      <article v-for="joke in dadJokes" class="jokes">
+        <dad-joke
+          v-bind:joke="joke.joke">
+        </dad-joke>
       </article>
     </section>
   </body>

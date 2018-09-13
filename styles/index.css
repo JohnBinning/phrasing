@@ -19,3 +19,7 @@ body {
   flex-direction: column;
   align-items: space-around;
 }
+
+.dad-joke {
+  color: orange;
+}
