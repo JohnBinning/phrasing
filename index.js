@@ -1,35 +1,36 @@
-
 fetch('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten')
 .then( res => res.json())
 .then( json => {
   app.jokes = json;
 });
 
-// fetch('https://icanhazdadjoke.com/', {
-//   headers: {
-//     "accept": "application/json"
-//   }
-// })
-// .then( res => res.json())
-// .then( json => {
-//   app.dadJokes.push(json);
-//   console.log(json.joke)
-// });
-
-const getMultipleDadJokes = (limit = 20) => {
-  fetch(`https://icanhazdadjoke.com/search?limit=${limit}`, {
+const getOneDadJoke = function() {
+  fetch('https://icanhazdadjoke.com/', {
     headers: {
-      "accept": "application/json",
+      "accept": "application/json"
     }
   })
   .then( res => res.json())
   .then( json => {
-    app.dadJokes = json.results;
-    console.log(json)
+    app.dadJokes.push(json);
+    console.log(app.dadJokes)
   });
-};
+}
 
-getMultipleDadJokes(5);
+// const getMultipleDadJokes = (limit = 20) => {
+//   fetch(`https://icanhazdadjoke.com/search?limit=${limit}`, {
+//     headers: {
+//       "accept": "application/json",
+//     }
+//   })
+//   .then( res => res.json())
+//   .then( json => {
+//     app.dadJokes = json.results;
+//     console.log(json)
+//   });
+// };
+
+// getMultipleDadJokes(5);
 
 var dadJoke = Vue.component('dad-joke', {
   props: ['joke'],
@@ -43,4 +44,7 @@ const app = new Vue({
     dadJokes: []
   },
   components: {dadJoke: dadJoke},
+  methods : {
+    getOneDadJoke: getOneDadJoke
+  }
 })

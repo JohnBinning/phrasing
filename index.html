@@ -2,20 +2,33 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-      <link href='./styles/index.css' rel='stylesheet' type='text/css'>
-    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Lekton:400,700" rel="stylesheet">
+    <link href='./styles/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='./styles/index.css' rel='stylesheet' type='text/css'>
+    <title>Quotes</title>
   </head>
   <body>
     <section id="app">
-      <!--<article v-for="joke in jokes" class="jokes">
-        <div class="setup">{{ joke.setup }}:</div>
-        <div class="punchline">{{ joke.punchline }}</div>
-      </article>-->
-      <article v-for="joke in dadJokes" class="jokes">
-        <dad-joke
-          v-bind:joke="joke.joke">
-        </dad-joke>
-      </article>
+      <section id="main-content">
+        <!--<article v-for="joke in jokes" class="jokes">
+          <div class="setup">{{ joke.setup }}:</div>
+          <div class="punchline">{{ joke.punchline }}</div>
+        </article>-->
+        <article class="button-wrapper">
+          <div class="get-div" v-on:click="getOneDadJoke">Get a new dad joke</div>
+          <div class="get-div">PlaceHolder</div>
+          <div class="get-div">PlaceHolder</div>
+          <div class="get-div">PlaceHolder</div>
+          <div class="get-div">PlaceHolder</div>
+        </article>
+        <article id="quote-container">
+          <article v-for="joke in dadJokes" class="joke">
+            <dad-joke
+              v-bind:joke="joke.joke">
+            </dad-joke>
+          </article>
+        </article>
+      </section>
     </section>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
