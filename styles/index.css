@@ -50,19 +50,44 @@ body {
 
 /* --- buttons --- */
 
-.get-div:hover {
+.get-button:hover {
   cursor: pointer;
 }
 
-.get-div {
+.get-button {
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
   height: 33%;
   justify-content: center;
   width: 33%;
-  background-color: black;
+  background-color: #313131;
+  color: #fff;
   margin: 10px;
+}
+
+.dad-joke-btn {
+  background-color: #313131;
+}
+
+.placeholder-one {
+  background-color: #2F2116;
+}
+
+.placeholder-two {
+  background-color: #240303;
+}
+
+.placeholder-three {
+  background-color: #090820;
+}
+
+.placeholder-four {
+  background-color: #313131;
+}
+
+.placeholder-five {
+  background-color: #090820;
 }
 
 .button-wrapper {
@@ -73,4 +98,19 @@ body {
   width: 33%;
   flex-wrap: wrap;
   padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  #main-content {
+    flex-direction: column;
+  }
+
+  .button-wrapper,
+  #quote-container {
+    width: 100%;
+  }
+
+  #quote-container {
+    align-items: center;
+  }
 }

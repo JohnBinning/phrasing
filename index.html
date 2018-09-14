@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lekton:400,700" rel="stylesheet">
     <link href='./styles/normalize.css' rel='stylesheet' type='text/css'>
     <link href='./styles/index.css' rel='stylesheet' type='text/css'>
@@ -15,11 +16,12 @@
           <div class="punchline">{{ joke.punchline }}</div>
         </article>-->
         <article class="button-wrapper">
-          <div class="get-div" v-on:click="getOneDadJoke">Get a new dad joke</div>
-          <div class="get-div">PlaceHolder</div>
-          <div class="get-div">PlaceHolder</div>
-          <div class="get-div">PlaceHolder</div>
-          <div class="get-div">PlaceHolder</div>
+          <button class="get-button dad-joke-btn" v-on:click="getOneDadJoke">Get a new dad joke</button>
+          <button class="get-button placeholder-one">PlaceHolder</button>
+          <button class="get-button placeholder-two">PlaceHolder</button>
+          <button class="get-button placeholder-three">PlaceHolder</button>
+          <button class="get-button placeholder-four">PlaceHolder</button>
+          <button class="get-button placeholder-five">PlaceHolder</button>
         </article>
         <article id="quote-container">
           <article v-for="joke in dadJokes" class="joke">
