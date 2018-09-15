@@ -23,13 +23,16 @@
           <button class="get-button placeholder-four">PlaceHolder</button>
           <button class="get-button placeholder-five">PlaceHolder</button>
         </article>
-        <article id="quote-container">
-          <article v-for="joke in dadJokes" class="joke">
-            <dad-joke
-              v-bind:joke="joke.joke">
-            </dad-joke>
-          </article>
+        <section id="right-side">
+          <title-section></title-section>
+          <article id="quote-container">
+            <article v-for="joke in dadJokes" class="joke">
+              <dad-joke
+                v-bind:joke="joke.joke">
+              </dad-joke>
+            </article>
         </article>
+        </section>
       </section>
     </section>
   </body>

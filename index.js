@@ -4,7 +4,7 @@ fetch('https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_ten')
   app.jokes = json;
 });
 
-const getOneDadJoke = function() {
+const getOneDadJoke = () => {
   fetch('https://icanhazdadjoke.com/', {
     headers: {
       "accept": "application/json"
@@ -15,6 +15,10 @@ const getOneDadJoke = function() {
     app.dadJokes.push(json);
     console.log(app.dadJokes)
   });
+}
+
+const clearPhrases = () => {
+  app.dadJokes = [];
 }
 
 // const getMultipleDadJokes = (limit = 20) => {
@@ -32,10 +36,23 @@ const getOneDadJoke = function() {
 
 // getMultipleDadJokes(5);
 
-var dadJoke = Vue.component('dad-joke', {
+const dadJoke = Vue.component('dad-joke', {
   props: ['joke'],
   template: '<div class="dad-joke">{{ joke }}</div>'
 });
+
+const titleSection = Vue.component('title-section', {
+  template: `
+    <section id="title-section">
+      <h1>Phrasing</h1>
+      <button id="clear-button" v-on:click="clearPhrases">
+        Clear
+      </button>
+    </section>`,
+  methods: {
+    clearPhrases: clearPhrases
+  }
+})
 
 const app = new Vue({
   el: '#app',
@@ -43,8 +60,11 @@ const app = new Vue({
     jokes: [],
     dadJokes: []
   },
-  components: {dadJoke: dadJoke},
-  methods : {
+  components: {
+    dadJoke: dadJoke,
+    titleSection: titleSection
+  },
+  methods: {
     getOneDadJoke: getOneDadJoke
   }
 })
