@@ -17,7 +17,7 @@
         </article>-->
         <article class="button-wrapper">
           <button class="get-button dad-joke-btn" v-on:click="getOneDadJoke">Get a new dad joke</button>
-          <button class="get-button placeholder-one">PlaceHolder</button>
+          <button class="get-button ron-quote-btn" v-on:click="getOneRonQuote">Get a new Ron Quote</button>
           <button class="get-button placeholder-two">PlaceHolder</button>
           <button class="get-button placeholder-three">PlaceHolder</button>
           <button class="get-button placeholder-four">PlaceHolder</button>
@@ -30,6 +30,11 @@
               <dad-joke
                 v-bind:joke="joke.joke">
               </dad-joke>
+            </article>
+            <article v-for="quote in ronQuotes" class="joke">
+              <ron-quote
+                v-bind:quote="quote">
+              </ron-quote>
             </article>
         </article>
         </section>
