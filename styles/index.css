@@ -138,4 +138,12 @@ body {
   #quote-container {
     align-items: center;
   }
+
+  #right-side {
+    width: 100%;
+  }
+
+  #title-section {
+    margin-top: 20px;
+  }
 }
